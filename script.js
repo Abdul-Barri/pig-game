@@ -23,42 +23,42 @@ diceRollBtn.addEventListener("click", function () {
   randomNum = diceRoll();
   console.log(typeof randomNum, randomNum);
   if (randomNum === 1) {
-    diceImage.src = "dice-1.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
     score1 += randomNum;
     score1.innerHTML = score1;
   } else if (randomNum === 2) {
-    diceImage.src = "dice-2.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
     score1 += randomNum;
     score1.innerHTML = score1;
   } else if (randomNum === 3) {
-    diceImage.src = "dice-3.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
     score1 += randomNum;
     score1.innerHTML = score1;
   } else if (randomNum === 4) {
-    diceImage.src = "dice-4.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
     score1 += randomNum;
     score1.innerHTML = score1;
   } else if (randomNum === 5) {
-    diceImage.src = "dice-5.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
     score1 += randomNum;
     score1.innerHTML = score1;
   } else if (randomNum === 6) {
-    diceImage.src = "dice-6.png";
+    diceImage.src = `dice-${randomNum}.png`;
     diceImage.classList.remove("hidden");
     score0 += randomNum;
     score0.innerHTML = score0;
