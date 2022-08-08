@@ -1,8 +1,10 @@
 "use strict";
 
 // Selecting HTML elements
-let score0 = document.getElementById("score--0");
-let score1 = document.getElementById("score--1");
+const score0 = document.getElementById("score--0");
+const score1 = document.getElementById("score--1");
+const currentScore0 = document.getElementById("current--0");
+const currentScore1 = document.getElementById("current--1");
 const diceImage = document.querySelector(".dice");
 const diceRollBtn = document.querySelector(".btn--roll");
 
@@ -12,6 +14,7 @@ score1.textContent = 0;
 diceImage.classList.add("hidden");
 
 let randomNum = 0;
+let currentScore = 0;
 
 // Functions declaration
 const diceRoll = function (diceNum) {
@@ -19,50 +22,38 @@ const diceRoll = function (diceNum) {
   return diceNum;
 };
 
+const updateDiceRoll = function () {
+  diceImage.src = `dice-${randomNum}.png`;
+  diceImage.classList.remove("hidden");
+};
+
+const updateCurrentScore = function () {
+  currentScore += randomNum;
+  currentScore0.textContent = currentScore;
+};
+
 diceRollBtn.addEventListener("click", function () {
   randomNum = diceRoll();
   console.log(typeof randomNum, randomNum);
-  if (randomNum === 1) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
-  } else if (randomNum === 2) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
-  } else if (randomNum === 3) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
-  } else if (randomNum === 4) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
-  } else if (randomNum === 5) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
-  } else if (randomNum === 6) {
-    diceImage.src = `dice-${randomNum}.png`;
-    diceImage.classList.remove("hidden");
-    score0 += randomNum;
-    score0.innerHTML = score0;
-    score1 += randomNum;
-    score1.innerHTML = score1;
+  if (randomNum !== 1) {
+    if (randomNum === 2) {
+      updateDiceRoll();
+      updateCurrentScore();
+    } else if (randomNum === 3) {
+      updateDiceRoll();
+      updateCurrentScore();
+    } else if (randomNum === 4) {
+      updateDiceRoll();
+      updateCurrentScore();
+    } else if (randomNum === 5) {
+      updateDiceRoll();
+      updateCurrentScore();
+    } else if (randomNum === 6) {
+      updateDiceRoll();
+      updateCurrentScore();
+    }
+  } else {
+    // switch player
+    console.log("Switch Player");
   }
 });
